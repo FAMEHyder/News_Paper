@@ -31,33 +31,6 @@ const Navbar = () => {
   return (
     <>
       <AppBar sx={{ backgroundColor: 'white' }}>
-        {/* Top Bar with Sign In, Sign Up, Cart, and Check Icons */}
-        <Box
-          sx={{
-            width: '100%',
-            display: { xs: 'none', sm: 'flex' },
-            gap: 1,
-            marginLeft: 'auto',
-            backgroundColor: 'darkgreen',
-            justifyContent: 'end',
-            padding: '0 16px',
-          }}
-        >
-          <Button color="inherit" onClick={() => handleClick('/signin')}>
-            Sign In
-          </Button>
-          <Button color="inherit" onClick={() => handleClick('/signup')}>
-            Sign Up
-          </Button>
-          <Button color="inherit" onClick={() => handleClick('/cartcomp')}>
-            <ShoppingCartIcon />
-          </Button>
-          <Button sx={{ color: 'white',mr:5 }} onClick={() => handleClick('/profile')}>
-            <AccountCircle fontSize="medium" />
-          </Button>
-        </Box>
-
-        {/* Main Toolbar with Logo and Navigation Links */}
         <Toolbar sx={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
           {/* Company Logo */}
           <Box
