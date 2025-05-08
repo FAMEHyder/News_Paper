@@ -4,8 +4,7 @@ import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import Slider from 'react-slick';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useAuthStore } from '../authContext/auth';
-import { useProductStore } from '../productcontext.jsx/Procontext';
+
 
 const AlmondCards = () => {
   const [almondProducts, setAlmondProducts] = useState([]);
