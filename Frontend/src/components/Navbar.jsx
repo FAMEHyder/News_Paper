@@ -12,19 +12,6 @@ const Navbar = () => {
   };
 
 
-
-
-
-  // Open dropdown menu
-  const handleOpenMenu = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  // Close dropdown menu
-  const handleCloseMenu = () => {
-    setAnchorEl(null);
-  };
-
   return (
     <>
       <AppBar sx={{ backgroundColor: 'white' }}>
