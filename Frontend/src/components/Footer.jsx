@@ -23,7 +23,7 @@ const Footer = () => {
           </Typography>
           <Typography variant="body1">
             <EmailIcon sx={{ mr: 1 }} />
-            info@sattara.com
+            info@newspaper.com
           </Typography>
           <Typography variant="body1">
             <PhoneIcon sx={{ mr: 1 }} />
@@ -38,16 +38,14 @@ const Footer = () => {
             About Us
           </Typography>
           <Typography variant="body2" sx={{ lineHeight: 1.8 }}>
-            SatTara Dryfruits provides the highest quality of dry fruits sourced from around the world. 
-            With over 20 years of experience in the business, we pride ourselves on our dedication to customer 
-            satisfaction and product excellence.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae rem itaque odio dignissimos mollitia, nulla voluptates nostrum tenetur distinctio? Unde odit praesentium alias hic modi autem natus commodi ducimus amet!
           </Typography>
         </Grid>
 
         {/* Social Media Section */}
         <Grid item xs={12} sm={4}>
           <Typography variant="h6" gutterBottom>
-            Connect with Us
+            Contact with Us
           </Typography>
           <Box sx={{ display: 'flex', gap: 2 }}>
             <Link href="https://www.facebook.com" target="_blank" color="inherit">
@@ -64,7 +62,7 @@ const Footer = () => {
       </Grid>
 
       <Box sx={{ textAlign: 'center', marginTop: '20px' }}>
-        <Typography variant="body2">© 2024 SatTara Dryfruits. All rights reserved.</Typography>
+        <Typography variant="body2">© 2025 news paper. All rights reserved.</Typography>
       </Box>
     </Box>
   );
