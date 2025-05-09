@@ -7,33 +7,48 @@ const AboutUs = () => {
       <Typography variant="h4" gutterBottom>
         About Us
       </Typography>
-      <Typography variant="body1" paragraph sx={{mt:15}}>
-        {}
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi id eveniet a, ipsum officiis
-        quas, molestias consequuntur ipsam asperiores inventore architecto autem maxime vero, dolores
-        aliquid sequi necessitatibus? Libero cupiditate facere provident velit quidem sed odio ea
-        perferendis cumque culpa dignissimos ullam quaerat, laboriosam voluptate autem ab maiores 
-        eum quam obcaecati corrupti blanditiis. Necessitatibus, quidem voluptatem sunt consectetur rerum aliquam 
-        aperiam pariatur sequi distinctio dignissimos corrupti, tenetur sint, unde vero ut nobis 
-        obcaecati blanditiis quibusdam sapiente? Aspernatur corporis similique quos sequi eum modi 
-        expedita! Id aut, aperiam modi eius labore tempora facere, libero autem ipsa animi repellat iste. 
-        Assumenda nostrum veniam eaque maiores alias quas voluptates sed corporis architecto numquam neque voluptas, soluta,
-        ab officia quis placeat reprehenderit vero, quam iste adipisci. Recusandae voluptatibus praesentium,
-        culpa voluptas nobis iure! Amet quis facere doloribus! Deserunt ducimus natus ratione quasi 
-        numquam, quae perferendis sit, illo laudantium, provident ullam in inventore voluptatum voluptate pariatur
-        aut tenetur nihil nam incidunt! Tempore mollitia natus adipisci! Minima unde ipsum explicabo animi fugiat.
-        Nihil, laudantium recusandae natus tempore laboriosam voluptatibus. Neque eaque doloremque quasi nam enim expedita
-        illum, accusamus dolorum autem laborum quibusdam ullam? Fugit, cumque accusamus. Magnam a repellendus cum ipsum
-        eos, autem voluptas officia voluptate maiores labore, cumque culpa at illo, ea consectetur repudiandae
-        vitae corrupti vero! Doloribus iste fugiat temporibus atque perferendis sapiente praesentium sed deserunt,
-        voluptatum, ab vitae repellat obcaecati non aliquid nesciunt nisi velit saepe omnis vero rerum earum
-        similique. Est itaque nulla explicabo ipsum culpa optio tenetur harum autem qui. Ipsum, mollitia? Architecto iste
-        omnis nisi sequi aliquam repudiandae quisquam, aspernatur unde eligendi modi. Optio ipsum voluptatum veniam
-        doloremque rem animi fuga consequatur soluta alias sit, similique quisquam itaque ullam non
-        eos quis illo provident, eius laudantium aspernatur dolore explicabo. Incidunt in
-        molestias eaque quam. Accusamus, tempora cumque magni nulla nesciunt sint nostrum eius molestias ducimus
+      <Typography variant="body1" paragraph sx={{ mt: 15 }}>
+        { }
+        <Typography>About Us</Typography>
+        <Typography>The Founder</Typography>
+        
+        Raja Hussain Khan Maqpoon (Late) was the Founder Publisher / Chief Editor of Daily K2 and Managing Director KPN Group of Newspapers. He hailed from Skardu (Gilgit-Baltistan) and was considered among the most distinguished young journalists of the region. He brought out “K2” as a weekly newspaper in 1996 when he was just 20. Through his publications, he struggled very hard for the rights of ever-ignored dwellers of Gilgit-Baltistan and fought for the rights of his region at national and international fora.
 
-        {}
+        In 2006, Raja Hussain Khan Maqpoon (Late) established “Karakorum Publishing Network” (KPN) and “K2” appeared as “The very first Daily newspaper” of Gilgit-Baltistan.Keeping to its matchless trend of “Very First” , KPN, under the supervision of Raja Hussain Khan Maqpoon, setup the first-ever 4 Colour Printing Press at Gilgit-Baltistan and first-ever private FM radio station FM-99; Gilgit-Baltistan in November 2010.  On February 26, 2012, Raja Hussain Khan Maqpoon passed away in a fatal road accident, leaving behind his glowing history of successful achievements and noble missions to be accomplished by his successors. May Allah rest his soul in eternal peace. (Aameen).
+
+
+
+        <Typography>The Company</Typography>
+        
+        K2 Publishing Network Private Limited (KPN), formerly known as Kakarakorum Publishing Network was established by the son of the soil, Late Raja Hussain Khan Maqpoon back in early 90s. It is now one of the leading media groups of the country and proudly publishes the following newspapers:-
+
+        Daily K2; Gilgit Baltistan
+
+        Daily K2; Rawalpindi/Islamabad
+
+        Daily K2; Karachi
+
+        Daily Waadi Gilgit Baltistan (English)
+
+
+
+        <Typography>The Publications</Typography>
+        Daily K-2, Gilgit-Baltistan has regularly been being published for the last 18 years. It has the privilege and honor of being the very first daily newspaper of this region. Publication of quality News Reports, Articles and Columns, reflecting the aspirations and issues of the people and its impartial editorial policy, has made it the most widely read and liked newspaper of Gilgit Baltistan. All the KPN publications are enlisted with the Central Media List of the Federal Government of Pakistan.
+
+        The Circulation of Daily K-2 in Gilgit-Baltistan is more than the combined circulation of all other national and regional newspapers being distributed in that region. Majority of these publications hit the news market late in the evening or next day for distribution whereas Daily K2 is distributed early in the morning through its well established network of distribution. E-version of all the publications is available on internet. English Newspaper, Daily Waadi has also widened its readership in the region after its revamp. The G-B communities living in Karachi and Rawalpindi / Islamabad are avid readers of Daily K-2.
+
+
+
+        <Typography>FM99 Radio</Typography>
+        KPN enjoys the honor of launching the very first Private FM-99 Radio stations in Gilgit and Skardu. FM-99; GB has successfully been airing its transmission from Gilgit for the last 5 years. They broadcast a vast range of informative and entertaining programs covering listeners of all ages and segments of society. Besides on-air transmission in Gilgit-Baltistan, FM-99, GB is listened all over the world through live streaming on internet.
+
+
+
+        
+        <Typography>The Region</Typography>
+        Gilgit-Baltistan is in the lime light since the launch of China Pakistan Economic Corridor (CPEC) as the region acts as the gateway to this game changer project of Pak-China Friendship. After attaining the status of a Province, the Government has launched a number of projects for the socio-economic uplift of the people of the Region that provide immense opportunities for commerce, trade and tourism. The influx of tourist and businessmen in the recent past reflects importance of the region. Thus, KPN publications and its FM Radio network provide the best platform to advertise the products and services in this region.
+
+        { }
       </Typography>
     </Container>
   );
