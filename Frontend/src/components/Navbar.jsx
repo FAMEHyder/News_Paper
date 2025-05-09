@@ -1,9 +1,6 @@
 // Navbar.jsx
 import { AppBar, Toolbar, Box, Button, Menu, MenuItem } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import AccountCircle from '@mui/icons-material/AccountCircle';
 import { useState } from 'react';
 import Cl from '../Image/CompanyLogo.png';
 
