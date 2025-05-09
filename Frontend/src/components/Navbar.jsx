@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <>
       <AppBar sx={{ backgroundColor: 'white' }}>
-        <Toolbar sx={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
+        <Toolbar sx={{ justifyContent: 'center',  }}>
           {/* Company Logo */}
           <Box
             onClick={() => handleClick('/')}
@@ -39,157 +39,14 @@ const Navbar = () => {
               backgroundSize: 'contain',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'left',
-              height: 70,
-              width: '150px',
+              height: 100,
+              width: '70px',
               marginRight: 10,
               transformOrigin: 'left',
             }}
           />
 
-          {/* Navigation Links */}
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-              color: 'black',
-              gap: 2,
-              fontWeight: 8,
-              alignItems: 'center', // Vertically center the buttons
-            }}
-          >
-            {/* Dropdown Button for Dry Fruits */}
-            <Button
-              color="inherit"
-              onClick={handleOpenMenu} // Open dropdown
-              endIcon={<ArrowDropDownIcon />} // Add dropdown icon
-              sx={{
-                color: 'black',
-                fontSize: '1rem',
-                fontWeight: 'bold',
-                textTransform: 'none', // Keep text as is
-                '&:hover': {
-                  backgroundColor: 'lightgreen',
-                  color: 'darkgreen',
-                },
-              }}
-            >
-              Products
-            </Button>
-
-            {/* Dropdown Menu */}
-            <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleCloseMenu}
-              PaperProps={{
-                style: {
-                  backgroundColor: 'lightgray', // Dropdown background color
-                  borderRadius: '8px',
-                  boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
-                },
-              }}
-              MenuListProps={{
-                sx: {
-                  padding: 0, // Remove default padding
-                },
-              }}
-            >
-              {[
-                { name: 'Almonds', path: '/1' },
-                { name: 'Cashews', path: '/2' },
-                { name: 'Walnuts', path: '/3' },
-                { name: 'Pistachios', path: '/4' },
-                { name: 'Raisins', path: '/5' },
-                { name: 'Dried Apricots', path: '/6' },
-                { name: 'Dates', path: '/7' },
-              ].map((fruit) => (
-                <MenuItem
-                  key={fruit.name}
-                  onClick={() => {
-                    handleClick(fruit.path);
-                    handleCloseMenu();
-                  }}
-                  sx={{
-                    fontSize: '0.9rem',
-                    fontWeight: 'medium',
-                    color: 'black',
-                    padding: '10px 20px',
-                    '&:hover': {
-                      backgroundColor: 'darkgreen',
-                      color: 'white',
-                    },
-                  }}
-                >
-                  {fruit.name}
-                </MenuItem>
-              ))}
-            </Menu>
-
-            {/* Additional Navigation Buttons */}
-            <Button
-              color="inherit"
-              onClick={() => handleClick('/about')}
-              sx={{
-                textTransform: 'none',
-                fontWeight: 'bold',
-                '&:hover': {
-                  backgroundColor: 'lightgreen',
-                  color: 'darkgreen',
-                },
-              }}
-            >
-              About Us
-            </Button>
-            <Button
-              color="inherit"
-              onClick={() => handleClick('/contact')}
-              sx={{
-                textTransform: 'none',
-                fontWeight: 'bold',
-                '&:hover': {
-                  backgroundColor: 'lightgreen',
-                  color: 'darkgreen',
-                },
-              }}
-            >
-              Contact Us
-            </Button>
-            {/* External Link to Facebook Page */}
-            <Button
-              color="inherit"
-              component="a"
-              href="https://www.facebook.com/profile.php?id=100077870918618" // Replace with your Facebook URL
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                textTransform: 'none',
-                fontWeight: 'bold',
-                '&:hover': {
-                  backgroundColor: 'lightgreen',
-                  color: 'darkgreen',
-                },
-              }}
-            >
-              Page
-            </Button>
-            {/* External Link to Blogs */}
-            <Button
-              color="inherit"
-              component="a"
-              href="https://famehyderblogs.blogspot.com/2021/03/fame-hyder-blogs.html" // Replace with your Blog URL
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                textTransform: 'none',
-                fontWeight: 'bold',
-                '&:hover': {
-                  backgroundColor: 'lightgreen',
-                  color: 'darkgreen',
-                },
-              }}
-            >
-              Blogs
-            </Button>
-          </Box>
+         
         </Toolbar>
       </AppBar>
     </>
