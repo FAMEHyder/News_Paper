@@ -11,13 +11,12 @@ const Footer = () => {
       sx={{
         backgroundColor: '#333',
         color: 'white',
-        padding: '40px 20px',
         marginTop: '10px',
       }}
     >
-      <Grid container spacing={4}>
+      <Grid container spacing={4} flexDirection={'row-reverse'}>
         {/* Contact Us Section */}
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={2}>
           <Typography variant="h6" gutterBottom>
             Contact Us
           </Typography>
@@ -33,7 +32,7 @@ const Footer = () => {
         </Grid>
 
         {/* About Us Section */}
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={2}>
           <Typography variant="h6" gutterBottom>
             About Us
           </Typography>
@@ -43,7 +42,7 @@ const Footer = () => {
         </Grid>
 
         {/* Social Media Section */}
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={2}>
           <Typography variant="h6" gutterBottom>
             Contact with Us
           </Typography>
@@ -59,7 +58,7 @@ const Footer = () => {
             </Link>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={2}>
           <Typography variant="h6" gutterBottom>
             aditions
           </Typography>
