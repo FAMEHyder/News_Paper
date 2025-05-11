@@ -14,11 +14,12 @@ const Navbar = () => {
     <>
       <AppBar sx={{ backgroundColor: 'white' }}>
         <Toolbar sx={{ justifyContent: 'center',  }}>
+
           {/* Company Logo */}
+
           <Box
             onClick={() => handleClick('/')}
             sx={{
-              paddingX: { xs: 2, sm: 4, md: 8 },
               cursor: 'pointer',
               backgroundImage: `url(${Cl})`,
               backgroundSize: 'contain',

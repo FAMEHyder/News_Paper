@@ -14,23 +14,20 @@ const AlmondCards = () => {
   const { userId, user } = useAuthStore();
   const { fetchData, products } = useProductStore();
   
-  // Fetch product data on mount
   useEffect(() => {
-    fetchData(); // Fetch all product data
+    fetchData();
   }, [fetchData]);
 
   useEffect(() => {
     const fetchAlmondProducts = async () => {
       try {
-        // Filter almonds based on category
         const filteredAlmonds = Array.isArray(products.result)
           ? products.result.filter(product => product.category === 'Almonds')
           : [];
         setAlmondProducts(filteredAlmonds);
 
-        // Initialize favorite status for each product
         const initialFavorites = filteredAlmonds.reduce((acc, product) => {
-          acc[product._id] = false; // Default to not favorited
+          acc[product._id] = false; 
           return acc;
         }, {});
         setFavorites(initialFavorites);

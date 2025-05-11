@@ -12,7 +12,7 @@ const AboutUs = () => {
         <Typography>Contact Us</Typography>
         <Typography>ADRESSES & CONTACT NUMBERS OF KPN BUREAU OFFICES</Typography>
         
-
+        
         Skardu KPN Office, Qatal-gah Market, Yadgar Chowk, Skardu.
         05815-454099 05815-454099
         Gilgit KPN Office, Shaheed-e-Millat Road, Gilgit
