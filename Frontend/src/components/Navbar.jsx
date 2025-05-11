@@ -1,12 +1,10 @@
 // Navbar.jsx
-import { AppBar, Toolbar, Box, Button, Menu, MenuItem } from '@mui/material';
+import { AppBar, Toolbar, Box} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import Cl from '../Image/CompanyLogo.png';
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [anchorEl, setAnchorEl] = useState(null);
   const handleClick = (path) => {
     navigate(path);
   };

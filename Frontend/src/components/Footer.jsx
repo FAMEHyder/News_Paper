@@ -47,20 +47,12 @@ const Footer = () => {
             Contact with Us
           </Typography>
           <Box sx={{ display: 'flex', gap: 2 }}>
-            <Link href="https://www.facebook.com" target="_blank" color="inherit">
-              <FacebookIcon sx={{ fontSize: 40, '&:hover': { color: '#3b5998' } }} />
-            </Link>
-            <Link href="https://www.twitter.com" target="_blank" color="inherit">
-              <TwitterIcon sx={{ fontSize: 40, '&:hover': { color: '#1da1f2' } }} />
-            </Link>
-            <Link href="https://www.instagram.com" target="_blank" color="inherit">
-              <InstagramIcon sx={{ fontSize: 40, '&:hover': { color: '#e1306c' } }} />
-            </Link>
+            
           </Box>
         </Grid>
         <Grid item xs={12} sm={2}>
           <Typography variant="h6" gutterBottom>
-            aditions
+            Join Us
           </Typography>
           <Box sx={{ display: 'flex', gap: 2 }}>
             <Link href="https://www.facebook.com" target="_blank" color="inherit">
