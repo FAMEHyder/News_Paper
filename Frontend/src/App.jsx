@@ -5,8 +5,11 @@ import Navbar from './components/Navbar.jsx';
 import AboutUs from './components/AboutUs.jsx';
 import ContactUs from './components/ContactUs.jsx';
 import AlmondCards from './components/AlmondData.jsx';
-
+import Privacy from './components/Privacy.jsx';
+import Terms from './components/Terms.jsx';
+import ContactUs from './components/ContactUs.jsx';
 import Footer from './components/Footer.jsx';
+import AboutUs from './components/AboutUs.jsx';
 
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
@@ -29,6 +32,8 @@ function App() {
 
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/contact" element={<Privacy />} />
+        <Route path="/contact" element={<Terms />} />
       </Routes>
 
       <StylesProvider jss={jss}>

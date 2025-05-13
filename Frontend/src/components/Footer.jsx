@@ -38,26 +38,26 @@ const Footer = () => {
         
       }}
     >
-      <Grid container spacing={4} flexDirection={'row-reverse'} >
+      <Grid container spacing={4} >
         {/* Contact Us Section */}
         <Grid item xs={12} sm={2}>
           <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
             ایڈیشنز
           </Typography>
-          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }} onClick={()=>{'/islamabad'}}>
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right',cursor:'pointer' }} onClick={()=>handleclick('/islamabad')}>
             اسلام آباد/راولپنڈی
           </Typography>
-          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right',cursor:'pointer' }} onClick={()=>handleclick('/islamabad')}>
             کراچی
           </Typography>
-          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right',cursor:'pointer' }} onClick={()=>handleclick('/islamabad')}>
             گلگت بلتستان
           </Typography>
-          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right',cursor:'pointer' }} onClick={()=>handleclick('/islamabad')}>
             لاہور
           </Typography>
 
-          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right',cursor:'pointer' }} onClick={()=>handleclick('/islamabad')}>
             مظفر آباد
           </Typography>
 
@@ -69,16 +69,16 @@ const Footer = () => {
           <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
             ہمارا نیٹ ورک
           </Typography>
-          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right',cursor:'pointer' }} onClick={()=>handleclick('/privacy')}>
             پرائیویسی پالیسی
           </Typography>
-          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right',cursor:'pointer' }} onClick={()=>handleclick('/terms')}>
             قوائد و ضوابط
           </Typography>
-          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right',cursor:'pointer' }} onClick={()=>handleclick('/about')}>
             ہمارے بارے میں
           </Typography>
-          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right',cursor:'pointer' }} onClick={()=>handleclick('/contact')}>
             ہم سے رابطہ
           </Typography>
         </Grid>
