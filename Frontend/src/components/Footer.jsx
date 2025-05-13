@@ -1,58 +1,92 @@
-import { Box, Grid, Typography,  Link } from '@mui/material';
+import { Box, Grid, Typography, Link } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
+import { createTheme } from '@mui/material/styles';
+import { create } from 'jss';
+import rtl from 'jss-rtl';
+import { StylesProvider, jssPreset } from '@mui/styles';
+import { useActionData, useNavigate } from 'react-router-dom';
+
+const theme = createTheme({
+  direction: 'rtl', // important for Urdu
+  typography: {
+    fontFamily: `'Noto Nastaliq Urdu', 'JameelNoori', 'serif'`,
+  },
+});
+
+const jss = create({ plugins: [...jssPreset().plugins, rtl()] });
+
+export { theme, jss };
 
 const Footer = () => {
+
+  const navigate = useNavigate('');
+
+
+  const handleclick = (path)=>{
+    navigate(path)
+
+  }
   return (
     <Box
       sx={{
         backgroundColor: '#333',
         color: 'white',
         marginTop: '10px',
+        justifyContent:'space-between',
+        
       }}
     >
-      <Grid container spacing={4} flexDirection={'row-reverse'}>
+      <Grid container spacing={4} flexDirection={'row-reverse'} >
         {/* Contact Us Section */}
         <Grid item xs={12} sm={2}>
-          <Typography variant="h6" gutterBottom>
-            Contact Us
+          <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            ایڈیشنز
           </Typography>
-          <Typography variant="body1">
-            <EmailIcon sx={{ mr: 1 }} />
-            info@newspaper.com
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }} onClick={()=>{'/islamabad'}}>
+            اسلام آباد/راولپنڈی
           </Typography>
-          <Typography variant="body1">
-            <PhoneIcon sx={{ mr: 1 }} />
-            +92 123 4567890
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            کراچی
           </Typography>
-          
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            گلگت بلتستان
+          </Typography>
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            لاہور
+          </Typography>
+
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            مظفر آباد
+          </Typography>
+
+
         </Grid>
 
         {/* About Us Section */}
         <Grid item xs={12} sm={2}>
-          <Typography variant="h6" gutterBottom>
-            About Us
+          <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            ہمارا نیٹ ورک
           </Typography>
-          <Typography variant="body2" sx={{ lineHeight: 1.8 }}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae rem itaque odio dignissimos mollitia, nulla voluptates nostrum tenetur distinctio? Unde odit praesentium alias hic modi autem natus commodi ducimus amet!
+          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            پرائیویسی پالیسی
+          </Typography>
+          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            قوائد و ضوابط
+          </Typography>
+          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            ہمارے بارے میں
+          </Typography>
+          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            ہم سے رابطہ
           </Typography>
         </Grid>
 
         {/* Social Media Section */}
         <Grid item xs={12} sm={2}>
-          <Typography variant="h6" gutterBottom>
-            Contact with Us
-          </Typography>
-          <Box sx={{ display: 'flex', gap: 2 }}>
-            
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={2}>
-          <Typography variant="h6" gutterBottom>
-            Join Us
+          <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            ہم سے رابطہ کے ذرائع
           </Typography>
           <Box sx={{ display: 'flex', gap: 2 }}>
             <Link href="https://www.facebook.com" target="_blank" color="inherit">
@@ -65,6 +99,12 @@ const Footer = () => {
               <InstagramIcon sx={{ fontSize: 40, '&:hover': { color: '#e1306c' } }} />
             </Link>
           </Box>
+
+        </Grid>
+        <Grid item xs={12} sm={2}>
+          <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
+            اہم صفحات
+          </Typography>
         </Grid>
       </Grid>
 
