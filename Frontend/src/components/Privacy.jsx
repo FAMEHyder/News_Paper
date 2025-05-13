@@ -4,9 +4,7 @@ import { Typography, Container } from '@mui/material';
 const AboutUs = () => {
     return (
         <Container >
-            <Typography variant="h4" gutterBottom color='black'>
-                About Us
-            </Typography>
+            
             <Typography variant="body1" paragraph sx={{ mt: 15 }}>
                 { }
                 <Typography fontWeight={800}>Privacy Policy</Typography>
