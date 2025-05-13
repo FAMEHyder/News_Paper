@@ -42,7 +42,7 @@ const Footer = () => {
     >
       <Grid container spacing={4} >
         {/* Contact Us Section */}
-        <Grid item xs={12} sm={2}>
+        <Grid item xs={12} sm={2} mr={2}>
           <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
             ایڈیشنز
           </Typography>
@@ -50,18 +50,18 @@ const Footer = () => {
             اسلام آباد/راولپنڈی
           </Typography>
           <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right', cursor: 'pointer', ':hover': { color: 'green' } }} onClick={() => handleclick('/islamabad')}>
-            کراچی
+            گلگت بلتستان
           </Typography>
           <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right', cursor: 'pointer', ':hover': { color: 'green' } }} onClick={() => handleclick('/islamabad')}>
-            گلگت بلتستان
+            مظفر آباد
+          </Typography>
+          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right', cursor: 'pointer', ':hover': { color: 'green' } }} onClick={() => handleclick('/islamabad')}>
+            کراچی
           </Typography>
           <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right', cursor: 'pointer', ':hover': { color: 'green' } }} onClick={() => handleclick('/islamabad')}>
             لاہور
           </Typography>
 
-          <Typography variant="body1" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right', cursor: 'pointer', ':hover': { color: 'green' } }} onClick={() => handleclick('/islamabad')}>
-            مظفر آباد
-          </Typography>
 
 
         </Grid>
