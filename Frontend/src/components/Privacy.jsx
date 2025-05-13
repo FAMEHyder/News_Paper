@@ -3,7 +3,7 @@ import { Typography, Container } from '@mui/material';
 
 const AboutUs = () => {
     return (
-        <Container >
+        <Container sx={{ padding: '2rem' }}>
             
             <Typography variant="body1" paragraph sx={{ mt: 15 }}>
                 { }
