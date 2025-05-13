@@ -4,13 +4,11 @@ import { Typography, Container } from '@mui/material';
 const AboutUs = () => {
     return (
         <Container sx={{ padding: '2rem' }}>
-            <Typography variant="h4" gutterBottom>
-                About Us
-            </Typography>
+            
             <Typography variant="body1" paragraph sx={{ mt: 15 }}>
                 { }
-                <Typography>Terms And Condition</Typography>
-                <Typography>About the terms</Typography>
+                <Typography fontWeight={800}>Terms And Condition</Typography>
+                <Typography fontWeight={600}>About the terms</Typography>
                 
                 By visiting this site you consent to be bound by these terms, which might produce results quickly on your first utilization of the site.
 
