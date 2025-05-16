@@ -125,7 +125,7 @@ const Footer = () => {
       </Grid>
 
       <Box sx={{ textAlign: 'center', marginTop: '20px' }}>
-        <Typography variant="body2">© 2025 news paper. All rights reserved.</Typography>
+        <Typography variant="body2">© 2025 Mashabrum Times. All rights reserved.</Typography>
       </Box>
     </Box>
   );

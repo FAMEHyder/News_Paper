@@ -1,6 +1,7 @@
 import { Box, Container, } from '@mui/material';
 import { useState, useEffect } from 'react';
 import bg from '../Image/bg.png';
+import paper from '../Image/paper.png';
 
 
 const Home = () => {
@@ -12,24 +13,45 @@ const Home = () => {
       maxWidth={false}
       disableGutters
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-        position: 'relative',
+  flex: 1,
+  position: 'relative',
+  height: { xs: '120vh', sm: '150vh', md: '200vh' }, // Responsive height
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundImage: `url(${bg})`,
+    zIndex: -2,
+  },
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'rgba(0,0,0,.5)',
+    zIndex: -1,
+  }
+}}
 
-        flex: 1,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: { xs: '120vh', sm: '150vh', md: '200vh' }, // Responsive height
-        backgroundImage: `url(${bg})`, // Dynamically set the background image
-        backgroundSize: 'cover'
-      }}
     >
       {/* the first main box of the container  */}
       <Box>
         {/* inner first box */}
-        <Box>
+        <Box
+        component={'img'}
+        src={paper}
+        sx={{
+
+        }}
+        >
         </Box>
         {/* inner second box */}
         <Box>
