@@ -10,7 +10,7 @@ import {
   FormControl,
   InputLabel,
 } from '@mui/material';
-import logo from '../image/AboutLogo.png';
+import logo from '../image/bg.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 

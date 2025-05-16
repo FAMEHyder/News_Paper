@@ -2,8 +2,8 @@ import { Container, Box, Typography, TextField, Button } from '@mui/material';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import logo from '../image/AboutLogo.png';
-import {useAuthStore} from '../authContext/auth';
+import logo from '../image/bg.png';
+// import {useAuthStore} from '../authContext/auth';
 
 
 const SignIn = () => {
