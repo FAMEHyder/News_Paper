@@ -8,7 +8,6 @@ import AlmondCards from './components/AlmondData.jsx';
 import Privacy from './components/Privacy.jsx';
 import Terms from './components/Terms.jsx';
 import Footer from './components/Footer.jsx';
-import './App.css';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import { StylesProvider } from '@mui/styles';

@@ -35,7 +35,7 @@ const Footer = () => {
       sx={{
         backgroundColor: '#333',
         color: 'white',
-        marginTop: '10px',
+        marginTop: '2px',
         justifyContent: 'space-between',
 
       }}
@@ -125,7 +125,7 @@ const Footer = () => {
       </Grid>
 
       <Box sx={{ textAlign: 'center', marginTop: '20px' }}>
-        <Typography variant="body2">© 2025 Mashabrum Times. All rights reserved.</Typography>
+        <Typography variant="body2">© 2025 Mashabrum Times. All rights reserved</Typography>
       </Box>
     </Box>
   );
