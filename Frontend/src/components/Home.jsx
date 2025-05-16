@@ -26,21 +26,21 @@ const Home = () => {
               mt: 20,
               width: '55vh',
               ':hover': {
-                boxShadow: '2px 2px 2px 2px black',
+                boxShadow: '1px 1px 1px 1px black',
                 transition: ' all 0.3s ease',
                 transform: 'scale(0.99)'
               }
             }}
 
           >
-            <CardContent>
+            <CardContent sx={{textAlign:'end'}}>
               اسلام آباد/راولپنڈی
             </CardContent>
             <CardMedia
               component={'img'}
               src={paper}
               sx={{
-                height: '45vh',
+                height: '50vh',
                 backgroundSize: 'contained',
 
               }}
@@ -54,21 +54,21 @@ const Home = () => {
               mt: 20,
               width: '55vh',
               ':hover': {
-                boxShadow: '2px 2px 2px 2px black',
+                boxShadow: '1px 1px 1px 1px black',
                 transition: ' all 0.3s ease',
                 transform: 'scale(0.99)'
               }
             }}
 
           >
-            <CardContent>
+            <CardContent sx={{textAlign:'end'}}>
               کراچی
             </CardContent>
             <CardMedia
               component={'img'}
               src={paper}
               sx={{
-                height: '45vh',
+                height: '50vh',
                 backgroundSize: 'contained',
 
               }}
@@ -82,21 +82,21 @@ const Home = () => {
               mt: 20,
               width: '55vh',
               ':hover': {
-                boxShadow: '2px 2px 2px 2px black',
+                boxShadow: '1px 1px 1px 1px black',
                 transition: ' all 0.3s ease',
                 transform: 'scale(0.99)'
               }
             }}
 
           >
-            <CardContent>
+            <CardContent sx={{textAlign:'end'}}>
               گلگت بلتستان
             </CardContent>
             <CardMedia
               component={'img'}
               src={paper}
               sx={{
-                height: '45vh',
+                height: '50vh',
                 backgroundSize: 'contained',
 
               }}
@@ -116,7 +116,7 @@ const Home = () => {
               mt: 10,
               width: '55vh',
               ':hover': {
-                boxShadow: '2px 2px 2px 2px black',
+                boxShadow: '1px 1px 1px 1px black',
                 transition: ' all 0.3s ease',
                 transform: 'scale(0.99)'
               }
@@ -130,7 +130,7 @@ const Home = () => {
               component={'img'}
               src={paper}
               sx={{
-                height: '45vh',
+                height: '50vh',
                 backgroundSize: 'contained',
 
               }}
@@ -144,21 +144,21 @@ const Home = () => {
               mt: 10,
               width: '55vh',
               ':hover': {
-                boxShadow: '2px 2px 2px 2px black',
+                boxShadow: '1px 1px 1px 1px black',
                 transition: ' all 0.3s ease',
                 transform: 'scale(0.99)'
               }
             }}
 
           >
-            <CardContent>
+            <CardContent sx={{textAlign:'end'}}>
               لاہورs
             </CardContent>
             <CardMedia
               component={'img'}
               src={paper}
               sx={{
-                height: '45vh',
+                height: '50vh',
                 backgroundSize: 'contained',
 
               }}
@@ -172,21 +172,21 @@ const Home = () => {
               mt: 10,
               width: '55vh',
               ':hover': {
-                boxShadow: '2px 2px 2px 2px black',
+                boxShadow: '1px 1px 1px 1px black',
                 transition: ' all 0.3s ease',
                 transform: 'scale(0.99)'
               }
             }}
 
           >
-            <CardContent>
+            <CardContent sx={{textAlign:'end'}}>
               مظفر آباد
             </CardContent>
             <CardMedia
               component={'img'}
               src={paper}
               sx={{
-                height: '45vh',
+                height: '50vh',
                 backgroundSize: 'contained',
 
               }}
