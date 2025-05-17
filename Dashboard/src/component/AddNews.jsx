@@ -27,84 +27,67 @@ import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
+const MAX_IMAGES = 8; // hard cap
+
 const AddNews = () => {
   const [loading, setLoading] = useState(true);
 
+  /* fake loader – ditch in prod */
   useEffect(() => {
-    // Simulating loading
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Simulate delay
+    const t = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(t);
   }, []);
 
-  // Validation Schema with Yup
+  /* Yup validation */
   const validationSchema = Yup.object({
     name: Yup.string().required("Product name is required"),
     description: Yup.string().required("Description is required"),
     images: Yup.mixed()
-      .required("Product image is required")
-      .test("fileRequired", "File must be an image", (value) =>
-        value ? ["image/jpeg", "image/png", "image/gif"].includes(value.type) : false
+      .required("At least 1 image is required")
+      .test(
+        "fileCount",
+        `You can upload up to ${MAX_IMAGES} images`,
+        (value) => Array.isArray(value) && value.length > 0 && value.length <= MAX_IMAGES
+      )
+      .test(
+        "fileType",
+        "Only JPG, PNG, or GIF images allowed",
+        (value) =>
+          Array.isArray(value) &&
+          value.every((file) =>
+            ["image/jpeg", "image/png", "image/gif"].includes(file.type)
+          )
       ),
-    category: Yup.string().required("Category is required"),
-    price: Yup.number()
-      .required("Price is required")
-      .positive("Price must be positive"),
-    sku: Yup.string().required("SKU is required"),
-    weight: Yup.number()
-      .required("Weight is required")
-      .positive("Weight must be positive"),
-    stock: Yup.number()
-      .required("Stock is required")
-      .min(0, "Stock cannot be negative"),
-    brand: Yup.string().required("Brand is required"),
+    
   });
 
-  // Form submission function
-  const handleSubmit = async (values) => {
+  /* submit */
+  const handleSubmit = async (values, { resetForm, setSubmitting }) => {
     try {
-      // Create a FormData object
       const formData = new FormData();
+      Object.entries(values).forEach(([key, val]) => {
+        if (key !== "images") formData.append(key, val);
+      });
+      values.images.forEach((file) => formData.append("images", file));
 
-      // Append form fields to FormData
-      formData.append("name", values.name);
-      formData.append("description", values.description);
-      formData.append("category", values.category);
-      formData.append("price", values.price);
-      formData.append("sku", values.sku);
-      formData.append("weight", values.weight);
-      formData.append("stock", values.stock);
-      formData.append("brand", values.brand);
-
-      // Append the image file to FormData
-      if (values.images) {
-        formData.append("images", values.images);
-      }
-
-      // Make the API call with FormData
-      const response = await axios.post("http://localhost:8000/product/", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data", // Set the correct Content-Type
-        },
+      await axios.post("http://localhost:8000/product/", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
       });
 
-      console.log("Product Created", response);
       alert("Product Created Successfully");
-    } catch (error) {
-      console.error("Error creating product:", error);
+      resetForm();
+    } catch (err) {
+      console.error(err);
       alert("Error creating product");
+    } finally {
+      setSubmitting(false);
     }
   };
 
-  // Form fields configuration to reduce repetition
+  /* field meta for quick map */
   const fields = [
     { name: "name", label: "Product Name", type: "text", icon: <AddPhotoAlternate /> },
     { name: "description", label: "Description", type: "text", multiline: true, rows: 4, icon: <Description /> },
-    { name: "price", label: "Price", type: "number", icon: <AttachMoney /> },
-    { name: "sku", label: "SKU", type: "text", icon: <VpnKey /> },
-    { name: "weight", label: "Weight", type: "number", icon: <Warehouse /> },
-    { name: "stock", label: "Stock", type: "number", icon: <Build /> },
-    { name: "brand", label: "Brand", type: "text", icon: <Build /> },
   ];
 
   return (
@@ -120,7 +103,7 @@ const AddNews = () => {
               initialValues={{
                 name: "",
                 description: "",
-                images: null,
+                images: [],
                 category: "",
                 price: "",
                 sku: "",
@@ -133,7 +116,7 @@ const AddNews = () => {
             >
               {({ setFieldValue, isSubmitting, errors, touched, values }) => (
                 <Form>
-                  {/* Dynamically render fields */}
+                  {/* text / number fields */}
                   {fields.map(({ name, label, type, icon, multiline, rows }) => (
                     <Field name={name} key={name}>
                       {({ field }) => (
@@ -161,78 +144,46 @@ const AddNews = () => {
                     </Field>
                   ))}
 
-                  {/* Image Upload Field */}
-                  <Field name="images">
-                    {() => (
-                      <TextField
-                        label="Product Images"
-                        fullWidth
-                        variant="outlined"
-                        type="text"
-                        disabled={loading}
-                        value={values.images ? values.images.name : ""}
-                        InputProps={{
-                          endAdornment: loading ? (
-                            <Skeleton variant="circular" width={24} height={24} />
-                          ) : (
-                            <InputAdornment position="end">
-                              <CameraAlt />
-                            </InputAdornment>
-                          ),
-                        }}
-                        sx={{ mb: 1 }}
-                        error={touched.images && !!errors.images}
-                        helperText={touched.images && errors.images}
-                        InputLabelProps={{
-                          shrink: true,
-                        }}
-                      />
-                    )}
-                  </Field>
+                  {/* filename preview */}
+                  {values.images.length > 0 && (
+                    <Box sx={{ display: "flex", flexWrap: "wrap", mb: 1, gap: 1 }}>
+                      {values.images.map((file, idx) => (
+                        <Typography key={idx} variant="caption">
+                          {file.name}
+                        </Typography>
+                      ))}
+                    </Box>
+                  )}
 
-                  {/* Choose File Button */}
+                  {/* Choose File */}
                   <Button
                     variant="contained"
                     component="span"
                     onClick={() => document.getElementById("product-images").click()}
-                    sx={{
-                      float: "right",
-                      backgroundColor: "lightgray",
-                      color: "black",
-                      mb: 2,
-                    }}
+                    sx={{ float: "right", backgroundColor: "lightgray", color: "black", mb: 2 }}
                     disabled={loading}
                   >
                     Choose File
                   </Button>
 
-                  {/* Hidden File Input */}
+                  {/* hidden file input */}
                   <input
                     type="file"
                     id="product-images"
-                    onChange={(e) => setFieldValue("images", e.target.files[0])}
+                    accept="image/*"
+                    multiple
                     style={{ display: "none" }}
                     disabled={loading}
+                    onChange={(e) => {
+                      const files = Array.from(e.target.files);
+                      const capped = files.slice(0, MAX_IMAGES);
+                      setFieldValue("images", capped);
+                    }}
                   />
 
-                  {/* Category Field */}
-                  <FormControl fullWidth sx={{ mb: 2, mt: 2 }}>
-                    <InputLabel>Category</InputLabel>
-                    <Field as={Select} label="Category" name="category" disabled={loading}>
-                      <MenuItem value="">
-                        <em>None</em>
-                      </MenuItem>
-                      <MenuItem value="Almonds">Almonds</MenuItem>
-                      <MenuItem value="Dates">Dates</MenuItem>
-                      <MenuItem value="Raisins">Raisins</MenuItem>
-                      <MenuItem value="Pistachios">Pistachios</MenuItem>
-                      <MenuItem value="Walnuts">Walnuts</MenuItem>
-                      <MenuItem value="Apricots">Apricots</MenuItem>
-                      <MenuItem value="Cashews">Cashews</MenuItem>
-                    </Field>
-                  </FormControl>
+                 
 
-                  {/* Submit Button */}
+                  {/* submit */}
                   <Button
                     type="submit"
                     fullWidth

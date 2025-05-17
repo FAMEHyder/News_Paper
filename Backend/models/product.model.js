@@ -1,70 +1,30 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-// Product Schema
 const productSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      trim: true
+      trim: true,
+      required: true,
     },
     description: {
       type: String,
-      trim: true
-    },
-    images: {
-      type: [String], 
-    },
-    category: {
-      type: String,
       trim: true,
+      required: true,
     },
-    subCategory: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'SubCategory',
+    /* 1–8 image paths/URLs */
+    images: {
+      type: [String],
+      validate: [
+        {
+          validator: (arr) => Array.isArray(arr) && arr.length > 0 && arr.length <= 8,
+          message: 'You must supply between 1 and 8 images.',
+        },
+      ],
+      required: true,
     },
-    review: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Review',
-      default: null
-    },
-   
   },
-  {
-    timestamps: true
-  }
+  { timestamps: true }
 );
 
-
-// SubCategory Schema
-const subCategorySchema = new mongoose.Schema(
-  {
-    brand: {
-      type: String,
-      trim: true
-    },
-    
-    weight: {
-      type: String,
-      trim: true
-    },
-    stock: {
-      type: Number,
-      default: 0
-    },
-    price: {
-      type: Number,
-    },
-    sku: {
-      type: String,  
-      unique: true
-    }
-  },
-  {
-    timestamps: true
-  }
-);
-// Export both models using named exports
-const SubCategory = mongoose.model('SubCategory', subCategorySchema);
-const Product = mongoose.model('Product', productSchema);
-
-export { SubCategory, Product };
+export default mongoose.model('Product', productSchema);
