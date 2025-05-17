@@ -73,7 +73,8 @@ export const getProductById = async (req, res, next) => {
 // Get all products
 export const getProducts = async (req, res, next) => {
   try {
-    const products = await Product.find().populate('subCategory');
+    const products = await Product.find();
+    
     res.status(200).json({
       message: "Products retrieved successfully.",
       status: 200,
