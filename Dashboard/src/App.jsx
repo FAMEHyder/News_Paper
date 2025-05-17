@@ -3,7 +3,7 @@ import Navbar from "./component/Navbar.jsx";
 import SignUp from "./component/SignUp.jsx";
 import LoginForm from "./component/SignIn.jsx";
 import Home from "./component/Home.jsx";
-
+import AddNews from "./component/AddNews.jsx";
 function App() {
 
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<LoginForm />} />
+        <Route path="/add" element={<AddNews/>}/>
       </Routes>
 
       {/* <Footer /> */}

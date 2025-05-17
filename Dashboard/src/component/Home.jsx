@@ -1,205 +1,89 @@
-import { Box, Card, Container, CardMedia, CardContent } from '@mui/material';
-import { useState, useEffect } from 'react';
-import bg from '../Image/bg.png';
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Container,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+} from '@mui/material';
+import { useState } from 'react';
 import paper from '../Image/paper.png';
+import {useNavigate} from 'react-router-dom';
+
+/** ─────────────────────────────────────────────
+ *  Re-usable card that pops a dialog on click
+ *  ────────────────────────────────────────────*/
+function CityCard({ title }) {
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleclick=(path)=>{
+    navigate(path)
+  }
 
 
-const Home = () => {
-
-
-  // 
   return (
-    <Container
-      sx={{
-        height: '170vh',
+    <>
+      <Card
+        sx={{
+          mt: 20,
+          width: '60vh',
+          cursor: 'pointer',
+          ':hover': {
+            boxShadow: 1,
+            transition: 'all .3s ease',
+            transform: 'scale(.99)',
+          },
+        }}
+        onClick={() => setOpen(true)}
+      >
+        <CardContent sx={{ textAlign: 'end' }}>{title}</CardContent>
+        <CardMedia
+          component="img"
+          src={paper}
+          sx={{ height: '50vh', backgroundSize: 'contain' }}
+        />
+      </Card>
 
-      }}>
-      {/* the first main box of the container  */}
-      <Box display={'flex'} flexDirection={'column'} > 
-        {/* the inner first main box */}
-        <Box
-        display={'flex'} justifyContent={'space-between'} 
-        >
+      <Dialog open={open} onClose={() => setOpen(false)}>
+        <DialogTitle>{title}</DialogTitle>
 
-          <Card
-            sx={{
-              mt: 20,
-              width: '55vh',
-              ':hover': {
-                boxShadow: '1px 1px 1px 1px black',
-                transition: ' all 0.3s ease',
-                transform: 'scale(0.99)'
-              }
-            }}
+        <DialogContent dividers>
+          {/* Put whatever you want in here */}
+          <p>What Would you like to do with <strong>{title}</strong>.</p>
+        </DialogContent>
 
+        <DialogActions>
+          <Button
+            variant="contained"
+            onClick={() => handleclick('/add')}
           >
-            <CardContent sx={{textAlign:'end'}}>
-              اسلام آباد/راولپنڈی
-            </CardContent>
-            <CardMedia
-              component={'img'}
-              src={paper}
-              sx={{
-                height: '50vh',
-                backgroundSize: 'contained',
+            Add Today NewsPaper
+          </Button>
+          <Button onClick={() => handleclick('/view')} variant='contained' color='secondary'>View Today NewsPaper</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+}
 
-              }}
-            />
-
-
-          </Card>
-
-          <Card
-            sx={{
-              mt: 20,
-              width: '55vh',
-              ':hover': {
-                boxShadow: '1px 1px 1px 1px black',
-                transition: ' all 0.3s ease',
-                transform: 'scale(0.99)'
-              }
-            }}
-
-          >
-            <CardContent sx={{textAlign:'end'}}>
-              کراچی
-            </CardContent>
-            <CardMedia
-              component={'img'}
-              src={paper}
-              sx={{
-                height: '50vh',
-                backgroundSize: 'contained',
-
-              }}
-            />
-
-
-          </Card>
-
-          <Card
-            sx={{
-              mt: 20,
-              width: '55vh',
-              ':hover': {
-                boxShadow: '1px 1px 1px 1px black',
-                transition: ' all 0.3s ease',
-                transform: 'scale(0.99)'
-              }
-            }}
-
-          >
-            <CardContent sx={{textAlign:'end'}}>
-              گلگت بلتستان
-            </CardContent>
-            <CardMedia
-              component={'img'}
-              src={paper}
-              sx={{
-                height: '50vh',
-                backgroundSize: 'contained',
-
-              }}
-            />
-
-
-          </Card>
-
-        </Box>
-
-        {/* the inner second main box */}
-        <Box
-        display={'flex'}  justifyContent={'space-between'} 
-        >
-          <Card
-            sx={{
-              mt: 10,
-              width: '55vh',
-              ':hover': {
-                boxShadow: '1px 1px 1px 1px black',
-                transition: ' all 0.3s ease',
-                transform: 'scale(0.99)'
-              }
-            }}
-
-          >
-            <CardContent>
-              Skardu
-            </CardContent>
-            <CardMedia
-              component={'img'}
-              src={paper}
-              sx={{
-                height: '50vh',
-                backgroundSize: 'contained',
-
-              }}
-            />
-
-
-          </Card>
-
-          <Card
-            sx={{
-              mt: 10,
-              width: '55vh',
-              ':hover': {
-                boxShadow: '1px 1px 1px 1px black',
-                transition: ' all 0.3s ease',
-                transform: 'scale(0.99)'
-              }
-            }}
-
-          >
-            <CardContent sx={{textAlign:'end'}}>
-              لاہورs
-            </CardContent>
-            <CardMedia
-              component={'img'}
-              src={paper}
-              sx={{
-                height: '50vh',
-                backgroundSize: 'contained',
-
-              }}
-            />
-
-
-          </Card>
-
-          <Card
-            sx={{
-              mt: 10,
-              width: '55vh',
-              ':hover': {
-                boxShadow: '1px 1px 1px 1px black',
-                transition: ' all 0.3s ease',
-                transform: 'scale(0.99)'
-              }
-            }}
-
-          >
-            <CardContent sx={{textAlign:'end'}}>
-              مظفر آباد
-            </CardContent>
-            <CardMedia
-              component={'img'}
-              src={paper}
-              sx={{
-                height: '50vh',
-                backgroundSize: 'contained',
-
-              }}
-            />
-
-
-          </Card>
-
+/** ─────────────────────────────────────────────
+ *  Main page
+ *  ────────────────────────────────────────────*/
+export default function Home() {
+  return (
+    <Container sx={{ height: '170vh' }}>
+      <Box display="flex" flexDirection="column">
+        <Box display="flex" justifyContent="space-between">
+          <CityCard title="اسلام آباد/راولپنڈی" />
+          <CityCard title="کراچی" />
+          <CityCard title="گلگت بلتستان" />
         </Box>
       </Box>
-
-    </Container >
+    </Container>
   );
-};
-
-export default Home;
+}
