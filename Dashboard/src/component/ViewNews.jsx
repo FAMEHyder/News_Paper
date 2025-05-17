@@ -1,4 +1,3 @@
-// AlmondCards.jsx
 import { useState, useEffect } from 'react';
 import {
     Box,
@@ -7,20 +6,17 @@ import {
     CardMedia,
     Typography,
     Grid,
-    Rating,
     Skeleton,
 } from '@mui/material';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
-const AlmondCards = () => {
-    const [NewsPaper, setNewsPaper] = useState([]);
+const AkhbarCards = () => {
+    const [akhbar, setAkhbar] = useState('');
     const [loading, setLoading] = useState(true);
-    const navigate = useNavigate();
 
-    /* ─────────────────────────────
-       Fetch once on component mount
-       ───────────────────────────── */
+    const url = `http://localhost:8000/${akhbar.images[0].replace(/\\/g, '/')}`;
+
+    console.log('Your newspaper is : ', url)
     useEffect(() => {
         let isMounted = true;
 
@@ -28,75 +24,73 @@ const AlmondCards = () => {
             try {
                 const response = await axios.get('http://localhost:8000/product/');
                 const allProducts = response.data?.result ?? [];
-                console.log('your response data is :', response.data)
 
-
-                console.log('your paper is ', allProducts)
-                if (isMounted) setNewsPaper(allProducts);
+                if (isMounted && allProducts.length > 0) {
+                    setAkhbar(allProducts[0]); // Show only the first newspaper
+                }
             } catch (err) {
-                console.error('Error fetching products ➜', err);
+                console.error('Error fetching Akhbar ➜', err);
             } finally {
                 if (isMounted) setLoading(false);
             }
         })();
 
-        // cleanup to avoid state-update-on-unmounted component
         return () => {
             isMounted = false;
         };
     }, []);
 
-
-
     return (
         <Box sx={{ mt: 12 }}>
-            <Grid container spacing={2}>
-                {(loading ? Array.from({ length: 8 }) : NewsPaper).map(
-                    (almond, index) => (
-                        <Grid item xs={12} sm={6} md={3} key={almond?._id || index}>
-                            <Card
-                                onClick={() => !loading && handleCardClick(almond)}
-                                sx={{
-                                    height: 400,
-                                    cursor: loading ? 'default' : 'pointer',
-                                    boxShadow: 5,
-                                    position: 'relative',
-                                }}
-                            >
-                                {/* ──────── image / skeleton ──────── */}
-                                {loading ? (
-                                    <Skeleton variant="rectangular" height={290} />
-                                ) : (
-                                    <CardMedia
-                                        component="img"
-                                        height="290"
-                                        image={
-                                            almond.images?.[0]
-                                                ? `http://localhost:8000/${almond.images[0].replace(
-                                                    /\\/g,
-                                                    '/'
-                                                )}`
-                                                : '/placeholder.jpg'
-                                        }
-                                        alt={almond.name}
-                                    />
-                                )}
-                            </Card>
-                        </Grid>
-                    )
-                )}
+            <Grid container spacing={2} justifyContent="center">
+                <Grid item xs={12} sm={6} md={4}>
+                    <Card
+                        sx={{
+                            height: 400,
+                            cursor: loading ? 'default' : 'pointer',
+                            boxShadow: 5,
+                            position: 'relative',
+                        }}
+                    >
+                        {/* ──────── image / skeleton ──────── */}
+                        {loading ? (
+                            <Skeleton variant="rectangular" height={290} />
+                        ) : (
+                            <CardMedia
+                                component="img"
+                                height="290"
+                                image={url}
+                                alt={'Today Newspaper'}
+                            />
+                        )}
 
-                {/* ───────────── empty state ───────────── */}
-                {!loading && NewsPaper.length === 0 && (
-                    <Grid item xs={12}>
-                        <Typography variant="h6" align="center" sx={{ mt: 4 }}>
-                            No almond products available.
-                        </Typography>
-                    </Grid>
-                )}
+                        {/* ────────── content / skeleton ───────── */}
+                        <CardContent>
+                            {loading ? (
+                                <>
+                                    <Skeleton variant="text" sx={{ fontSize: '1.25rem', width: '80%' }} />
+                                    <Skeleton variant="text" sx={{ width: '60%' }} />
+                                </>
+                            ) : akhbar ? (
+                                <>
+                                    <Typography gutterBottom variant="h6">
+                                        {akhbar.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        Category: {akhbar.category ?? 'N/A'}
+                                    </Typography>
+                                </>
+                            ) : (
+                                <Typography variant="body2" color="text.secondary">
+                                    No Akhbar product found.
+                                </Typography>
+                            )}
+                        </CardContent>
+                    </Card>
+                </Grid>
             </Grid>
         </Box>
     );
 };
 
-export default AlmondCards;
+export default AkhbarCards;
