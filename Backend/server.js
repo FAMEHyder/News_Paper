@@ -3,10 +3,7 @@ import dotenv from 'dotenv';
 import router from './routes/user.routes.js';
 import prodrouter from "./routes/product.routes.js";
 import DataBaseConnection from './database/database.js';
-import purchase from './routes/Purchase.routes.js';
-import wish from './routes/wishlist.routes.js';
 import cors from 'cors';
-import Cart from './routes/cart.route.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import cookieParser from "cookie-parser";
@@ -33,9 +30,7 @@ app.use(cors({
 // ✅ API Routes
 app.use('/user', router);
 app.use('/product', prodrouter);
-app.use('/purchase', purchase);
-app.use('/wish', wish);
-app.use('/Cart', Cart);
+
 
 // ✅ Static file serving setup for media folder
 const _filename = fileURLToPath(import.meta.url);
