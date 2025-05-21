@@ -40,8 +40,7 @@ const AddNews = () => {
 
   /* Yup validation */
   const validationSchema = Yup.object({
-    name: Yup.string().required("Product name is required"),
-    description: Yup.string().required("Description is required"),
+    Date: Yup.string().required("Product name is required"),
     images: Yup.mixed()
       .required("At least 1 image is required")
       .test(
