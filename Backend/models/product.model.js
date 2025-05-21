@@ -12,7 +12,7 @@ const productSchema = new mongoose.Schema(
       type: [String],
       validate: [
         {
-          validator: (arr) => Array.isArray(arr) && arr.length > 0 && arr.length <= 8,
+          validator: (arr) => Array.isArray(arr) && arr.length > 0 && arr.length <= 4,
           message: 'You must supply between 1 and 8 images.',
         },
       ],
