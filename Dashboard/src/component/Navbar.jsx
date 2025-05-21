@@ -1,7 +1,7 @@
 // Navbar.jsx
 import { AppBar, Toolbar, Box} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Cl from '../Image/bg.png';
+import DMT from '../Image/DMT.png';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -12,23 +12,23 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar sx={{ backgroundColor: 'white' }}>
-        <Toolbar sx={{ justifyContent: 'center',  }}>
+      <AppBar sx={{ backgroundColor: 'white',height:'23vh' }}>
+        <Toolbar sx={{ justifyContent: 'center',height:'23vh',width:'100%', }}>
 
           {/* Company Logo */}
 
           <Box
             onClick={() => handleClick('/')}
+            component={'img'}
+            src={DMT}
+
             sx={{
               cursor: 'pointer',
-              backgroundImage: `url(${Cl})`,
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'left',
-              height: 100,
-              width: '70px',
-              marginRight: 10,
-              transformOrigin: 'left',
+              backgroundSize: 'cover 40%',
+              height: '23vh',
+              // backgroundRepeat:'no-repeat',
+              width: '100%',
+              backgroundPosition:'cover'
             }}
           />
 
