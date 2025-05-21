@@ -101,15 +101,9 @@ const AddNews = () => {
 
             <Formik
               initialValues={{
-                name: "",
-                description: "",
+                Date: "",
                 images: [],
-                category: "",
-                price: "",
-                sku: "",
-                weight: "",
-                stock: "",
-                brand: "",
+                
               }}
               validationSchema={validationSchema}
               onSubmit={handleSubmit}

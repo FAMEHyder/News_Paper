@@ -78,9 +78,7 @@ export default function Home() {
   return (
     <Container sx={{ height: '170vh' }}>
       <Box display="flex" flexDirection="column">
-        <Box display="flex" justifyContent="space-between">
-          <CityCard title="اسلام آباد/راولپنڈی" />
-          <CityCard title="کراچی" />
+        <Box display="flex" justifyContent="center">
           <CityCard title="گلگت بلتستان" />
         </Box>
       </Box>
