@@ -1,7 +1,7 @@
 // Navbar.jsx
 import { AppBar, Toolbar, Box} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Cl from '../Image/CompanyLogo.png';
+import Cl from '../Image/bg.png';
 
 const Navbar = () => {
   const navigate = useNavigate();
