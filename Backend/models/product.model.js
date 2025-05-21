@@ -2,17 +2,12 @@ import mongoose from 'mongoose';
 
 const productSchema = new mongoose.Schema(
   {
-    name: {
+    Date: {
       type: String,
       trim: true,
       required: true,
     },
-    description: {
-      type: String,
-      trim: true,
-      required: true,
-    },
-    /* 1–8 image paths/URLs */
+    
     images: {
       type: [String],
       validate: [
