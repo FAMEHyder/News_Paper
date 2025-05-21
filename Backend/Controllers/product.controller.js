@@ -5,9 +5,7 @@ export const addProduct = async (req, res, next) => {
   console.log('req.body',req.body);
   console.log('req.files',req.files);
   const {
-    name,
-    description,
-    category,
+    Date,
   } = req.body;
   
 console.log ("your req is now :",req.body)
@@ -21,9 +19,7 @@ console.log ("your req is now :",req.body)
 
       // Create product
     const product = new Product({
-      name, 
-      description, 
-      category, 
+      Date, 
       images
     });
     console.log(product);
@@ -92,7 +88,7 @@ export const getProducts = async (req, res, next) => {
 
 // Update product by ID
 export const updateProduct = async (req, res, next) => {
-  const { name, description, category, ...others } = req.body;
+  const { Date, description, category, ...others } = req.body;
 
   try {
     // Find product by ID and update it
@@ -110,7 +106,7 @@ export const updateProduct = async (req, res, next) => {
       images = req.files.map(file => file.path);
     }
 
-    product.name = name || product.name;
+    product.Date = Date || product.Date;
     product.description = description || product.description;
     product.category = category || product.category;
     product.images = images;

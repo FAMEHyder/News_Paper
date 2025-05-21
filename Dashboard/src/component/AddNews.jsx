@@ -7,21 +7,12 @@ import {
   Typography,
   Skeleton,
   InputAdornment,
-  MenuItem,
-  Select,
-  FormControl,
-  InputLabel,
   CircularProgress,
   Button,
 } from "@mui/material";
 import {
   AddPhotoAlternate,
   Description,
-  AttachMoney,
-  VpnKey,
-  Warehouse,
-  Build,
-  CameraAlt,
 } from "@mui/icons-material";
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
