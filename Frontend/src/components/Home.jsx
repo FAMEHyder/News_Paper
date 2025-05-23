@@ -14,7 +14,16 @@ const Home = () => {
         height: '170vh',
 
       }}>
-     
+      {/* this is the main box  */}
+      <Box>
+        {/* the box from where the news paper is being read  */}
+        <Box></Box>
+
+        {/* the sub parts of the news paper  */}
+        <Box></Box>
+
+
+      </Box>
 
     </Container >
   );
