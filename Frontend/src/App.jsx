@@ -21,7 +21,17 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
+
+      <StylesProvider jss={jss}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <div dir="rtl">
+            <Navbar />
+          </div>
+        </ThemeProvider>
+      </StylesProvider>
+      
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/1" element={<AlmondCards />} />

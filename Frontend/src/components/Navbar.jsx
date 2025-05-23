@@ -40,7 +40,7 @@ const Navbar = () => {
 
             }}
           >
-            <Button></Button>
+            <Button>گزشتہ شمارے</Button>
           </Box>
 
         </Toolbar>
