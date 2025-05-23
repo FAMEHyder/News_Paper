@@ -1,5 +1,5 @@
 // Navbar.jsx
-import { AppBar, Toolbar, Box } from '@mui/material';
+import { AppBar, Toolbar, Box, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import DMT from '../Image/DMT.png';
 
@@ -12,8 +12,8 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar sx={{ backgroundColor: 'white', height: '23vh' }}>
-        <Toolbar sx={{ justifyContent: 'center', height: '23vh', width: '100%', display: 'flex' }}>
+      <AppBar sx={{ backgroundColor: 'white', height: '30vh' }}>
+        <Toolbar sx={{ display: 'flex',justifyContent: 'center',flexDirection:'column', height: '23vh', width: '100%',  }}>
 
           {/* Company Logo */}
 
@@ -26,20 +26,21 @@ const Navbar = () => {
               cursor: 'pointer',
               backgroundSize: 'cover 40%',
               height: '23vh',
-              // backgroundRepeat:'no-repeat',
+              backgroundRepeat:'no-repeat',
               width: '100%',
               backgroundPosition: 'cover'
             }}
           />
+
           <Box
             sx={{
-              height: '40vh',
+              height: '10vh',
               width: '100%',
-              border: '2px solid red'
+              border: '2px solid green'
 
             }}
           >
-
+            <Button></Button>
           </Box>
 
         </Toolbar>
