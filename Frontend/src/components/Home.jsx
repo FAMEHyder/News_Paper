@@ -1,9 +1,9 @@
 import { Box, Card, Container, CardMedia, CardContent } from '@mui/material';
 import { useState, useEffect } from 'react';
-import Front from '../Image/A.jpg';
-import second from '../Image/B.jpg';
-import third from '../Image/C.jpg';
-import four from '../Image/D.jpg';
+import Front from '../Image/A.png';
+import second from '../Image/B.png';
+import third from '../Image/C.png';
+import four from '../Image/D.png';
 
 const Home = () => {
 
@@ -48,7 +48,7 @@ const Home = () => {
           <Box
             sx={{
               height: '30vh',
-              widht: '30vh',
+              widht: '',
               mt: 2,
               border: '2px solid blue'
 
