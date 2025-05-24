@@ -43,6 +43,8 @@ const Home = () => {
 
           }}
         >
+
+          {/* The Sub image one */}
           <Box
           sx={{
             height: '3vh',
@@ -52,6 +54,7 @@ const Home = () => {
 
           }}
           />
+          {/* The Sub image two  */}
           <Box
           sx={{
             height: '3vh',
@@ -61,6 +64,7 @@ const Home = () => {
 
           }}
           />
+          {/* The Sub Image three  */}
           <Box
           sx={{
             height: '3vh',
@@ -70,6 +74,7 @@ const Home = () => {
 
           }}
           />
+          {/* The Sub image four  */}
           <Box
           sx={{
             height: '3vh',
