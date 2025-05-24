@@ -1,8 +1,9 @@
 import { Box, Card, Container, CardMedia, CardContent } from '@mui/material';
 import { useState, useEffect } from 'react';
-import bg from '../Image/bg.png';
-import paper from '../Image/paper.png';
-
+import Main from '../Image/A.jpg';
+import B from '../Image/B.jpg';
+import C from '../Image/C.jpg';
+import D from '../Image/D.jpg';
 
 const Home = () => {
 
@@ -17,10 +18,21 @@ const Home = () => {
       {/* this is the main box  */}
       <Box>
         {/* the box from where the news paper is being read  */}
-        <Box></Box>
+        <Box
+        
+        componont='img'
+        src={Main}
+        
+        >
+
+
+        </Box>
 
         {/* the sub parts of the news paper  */}
-        <Box></Box>
+        <Box>
+
+
+        </Box>
 
 
       </Box>
