@@ -1,9 +1,9 @@
 import { Box, Card, Container, CardMedia, CardContent } from '@mui/material';
 import { useState, useEffect } from 'react';
-import Main from '../Image/A.jpg';
-import B from '../Image/B.jpg';
-import C from '../Image/C.jpg';
-import D from '../Image/D.jpg';
+import Front from '../Image/A.jpg';
+import second from '../Image/B.jpg';
+import third from '../Image/C.jpg';
+import four from '../Image/D.jpg';
 
 const Home = () => {
 
@@ -21,7 +21,7 @@ const Home = () => {
         <Box
 
           componont='img'
-          src={Main}
+          src={Front}
           sx={{
             height: '300vh',
             widht: '100%',
@@ -36,54 +36,45 @@ const Home = () => {
           sx={{
             height: '30vh',
             widht: '100%',
-            mt:2,            
+            mt: 2,
             border: '2px solid red',
-            display:'flex',
-            
+            display: 'flex',
+
 
           }}
         >
 
           {/* The Sub image one */}
           <Box
-          sx={{
-            height: '3vh',
-            widht: '30vh',
-            mt:2,            
-            border: '2px solid red'
+            sx={{
+              height: '30vh',
+              widht: '30vh',
+              mt: 2,
+              border: '2px solid blue'
 
-          }}
+            }}
           />
           {/* The Sub image two  */}
           <Box
-          sx={{
-            height: '3vh',
-            widht: '30vh',
-            mt:2,            
-            border: '2px solid red'
+            sx={{
+              height: '30vh',
+              widht: '30vh',
+              mt: 2,
+              border: '2px solid black'
 
-          }}
+            }}
           />
           {/* The Sub Image three  */}
           <Box
-          sx={{
-            height: '3vh',
-            widht: '30vh',
-            mt:2,            
-            border: '2px solid red'
+            sx={{
+              height: '30vh',
+              widht: '30vh',
+              mt: 2,
+              border: '2px solid green'
 
-          }}
+            }}
           />
-          {/* The Sub image four  */}
-          <Box
-          sx={{
-            height: '3vh',
-            widht: '30vh',
-            mt:2,            
-            border: '2px solid red'
-
-          }}
-          />
+         
 
         </Box>
 
