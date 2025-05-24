@@ -42,8 +42,8 @@ const Navbar = () => {
             }}
           >
             <Button color='white' sx={{mr:3,'&:hover':{bgcolor:'red',transition:'ease-in-out scale(.9)',}}}>صفحہ اول</Button>
-            <Button color='white' sx={{borderInlineStart:'2px solid white',mr:3,'&:hover':{bgcolor:'red',transition:'ease-in-out scale(.9)',}}}>صفحات</Button>
-            <Button color='white' sx={{borderInlineStart:'2px solid white',mr:3,'&:hover':{bgcolor:'red',transition:'ease-in-out scale(.9)',}}}>گزشتہ شمارے</Button>
+            <Button color='white' sx={{borderInlineStart:'2px solid silver',mr:3,'&:hover':{bgcolor:'red',transition:'ease-in-out scale(.9)',}}}>صفحات</Button>
+            <Button color='white' sx={{borderInlineStart:'2px solid silver',mr:3,'&:hover':{bgcolor:'red',transition:'ease-in-out scale(.9)',}}}>گزشتہ شمارے</Button>
           </Box>
 
         </Toolbar>
