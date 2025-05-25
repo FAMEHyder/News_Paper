@@ -1,4 +1,4 @@
-import { Box, Card, Container, CardMedia, CardContent } from '@mui/material';
+import { Box, Card, Container, CardMedia, CardContent, Grid } from '@mui/material';
 import { useState, useEffect } from 'react';
 import Front from '../Image/A.png';
 import second from '../Image/B.png';
@@ -33,18 +33,15 @@ setakhbarparo(label)
 
   // 
   return (
-    <Container
+    <Grid
       sx={{
-        height: '350vh',
+        height: '435vh',
 
       }}>
       {/* this is the main box  */}
       <Box
         sx={{
           mt:21,
-          hieght:'100%',
-          width:'100%',
-          border:'2px solid red'
         }}
       >
 
@@ -53,11 +50,10 @@ setakhbarparo(label)
           component={'img'}
           src={imageobject[akharparo]?.image}
           sx={{
-            height: '300vh',
-            widht: '100%',
-            ml: '78px',
-            mt: 2,
+            width:'210vh',
             border: '1px solid black',
+            mt:2,
+            ml:2
           }}
         />
 
@@ -69,7 +65,6 @@ setakhbarparo(label)
             mt: 1,
             display: 'flex',
             justifyContent: 'space-around',
-            border:'2px solid black'
           }}
         >
 
@@ -131,7 +126,7 @@ setakhbarparo(label)
         </Box>
       </Box>
 
-    </Container >
+    </Grid >
   );
 };
 
