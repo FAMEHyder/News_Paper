@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 import Front from '../Image/A.png';
 import second from '../Image/B.png';
 import third from '../Image/C.png';
-import fourth from '../Image/D.png';
+import four from '../Image/D.png';
 
 
 
 const Home = () => {
-  const [akharparo,setakhbarparo]=useState('');
+  const [akharparo,setakhbarparo]=useState('first');
 
 const imageobject = {
 
@@ -21,8 +21,8 @@ const imageobject = {
   third:{
     image:third 
   },
-  fourth:{
-    image:fourth
+  four:{
+    image:four
   }
 
 }
@@ -51,7 +51,7 @@ setakhbarparo(label)
         {/* the box from where the news paper is being read  */}
         <Box
           component={'img'}
-          src={Front}
+          src={imageobject[akharparo]?.image}
           sx={{
             height: '300vh',
             widht: '100%',
@@ -77,6 +77,7 @@ setakhbarparo(label)
           <Box
             component={'img'}
             src={second}
+            onClick={() => handleYeParo('second')}
             sx={{
               height: '30vh',
               widht: '40vh',
@@ -89,6 +90,7 @@ setakhbarparo(label)
           <Box
             component={'img'}
             src={third}
+            onClick={() => handleYeParo('third')}
             sx={{
               height: '30vh',
               widht: '40vh',
@@ -102,6 +104,7 @@ setakhbarparo(label)
           <Box
             component={'img'}
             src={four}
+            onClick={() => handleYeParo('four')}
             sx={{
               height: '30vh',
               widht: '40vh',
@@ -114,6 +117,7 @@ setakhbarparo(label)
           <Box
             component={'img'}
             src={Front}
+            onClick={() => handleYeParo('first')}
             sx={{
               height: '30vh',
               widht: '40vh',
