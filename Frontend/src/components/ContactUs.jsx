@@ -1,41 +1,157 @@
-// AboutUs.jsx
-import { Typography, Container } from '@mui/material';
+import { Typography, Container, Box, TextField, Button, Grid } from '@mui/material';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import ScheduleIcon from '@mui/icons-material/Schedule';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import backgroundImageUrl from '../image/DMT.png';
+import emailjs from 'emailjs-com';
 
-const AboutUs = () => {
+const ContactUs = () => {
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required('Name is required'),
+      email: Yup.string().email('Invalid email address').required('Email is required'),
+      message: Yup.string().required('Message is required'),
+    }),
+    onSubmit: (values, { resetForm }) => {
+      emailjs
+        .send(
+          'service_bko45nn',
+          'template_kuu4qem',
+          {
+            to_name: 'IYEF',
+            from_name: values.name,
+            from_email: values.email,
+            message: values.message,
+          },
+          'Gpm47Cw5Xb3Vf2MI3'
+        )
+        .then((result) => {
+          console.log('Email successfully sent:', result.text);
+          alert('Message sent successfully!');
+          resetForm();
+        })
+        .catch((error) => {
+          console.error('Error sending email:', error.text);
+          alert('Failed to send the message, please try again.');
+        });
+    },
+  });
+
   return (
-    <Container sx={{ padding: '2rem' }}>
+    <Container sx={{ p: { xs: 2, md: 4 },mt:25,mb:2, maxWidth: 'lg' }}>
       
-      <Typography variant="body1" paragraph sx={{ mt: 15 }}>
-        { }
-        <Typography fontWeight={800}>Contact Us</Typography>
-        <Typography fontWeight={600}>ADRESSES & CONTACT NUMBERS OF KPN BUREAU OFFICES</Typography>
-        
-        
-        Skardu Mashabrum times Office, Hussaini Chowk, Skardu.
-        <br />
-        05815-6749375 05815-234523
-        <br />
-        Gilgit Mashabrum times Office, NLI market Road, Gilgit
-        <br />
-        05811-42323232 05811-43434221
-        <br />
-        Ghizer Mashabrum times Office, Ghizer 05814-2323232 05814-4523423
-        <br />
-        Ghanche Mashabrum times Office Main Bazar Khaplu,  Distt: Ghanche
-        <br />
-        05816-44546432 05816-4502322132
-        <br />
-        Chillas Mashabrum times Office Saddar Bazar Chilas, Distt. Diamer
-        <br />
-        05812-450870 05812-450621 
-        <br />
-        <br />
-        Islamabad (Head Office) Mashabrum times Office Islamabad.
-        051-2624322331-86 Fax: 051-23232111-2423
-        { }
-      </Typography>
+      <Grid container justifyContent={'center'} spacing={3} sx={{ mb: 4 }}>
+        <Grid item xs={12} sm={6} md={3}>
+          <Box sx={{ textAlign: 'center' }}>
+            <EmailIcon fontSize="large" color="primary" />
+            <Typography variant="h6">Email</Typography>
+            <Typography variant="body2">mashabrumtimes@gmail.com</Typography>
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <Box sx={{ textAlign: 'center' }}>
+            <PhoneIcon fontSize="large" color="primary" />
+            <Typography variant="h6">Phone</Typography>
+            <Typography variant="body2">+923424323232</Typography>
+            <Typography variant="body2">+923535634323</Typography>
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <Box sx={{ textAlign: 'center' }}>
+            <LocationOnIcon fontSize="large" color="primary" />
+            <Typography variant="h6">Address</Typography>
+            <Typography variant="body2">SAT-TARA DIGITAL MARKETING SERVER</Typography>
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <Box sx={{ textAlign: 'center' }}>
+            <ScheduleIcon fontSize="large" color="primary" />
+            <Typography variant="h6">Services</Typography>
+            <Typography variant="body2">24/7</Typography>
+          </Box>
+        </Grid>
+      </Grid>
+
+      <Box
+        component="form"
+        onSubmit={formik.handleSubmit}
+        sx={{
+          p: { xs: 2, sm: 3 },
+          borderRadius: 2,
+          boxShadow: 3,
+          backgroundColor: 'white',
+        }}
+      >
+        <Typography variant="h5" gutterBottom textAlign="center">
+          Send us a Message
+        </Typography>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              fullWidth
+              id="name"
+              name="name"
+              label="Full Name"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.name && Boolean(formik.errors.name)}
+              helperText={formik.touched.name && formik.errors.name}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              fullWidth
+              id="email"
+              name="email"
+              label="Email"
+              type="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
+            />
+          </Grid>
+        </Grid>
+        <TextField
+          fullWidth
+          id="message"
+          name="message"
+          label="Message"
+          multiline
+          rows={4}
+          value={formik.values.message}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.touched.message && Boolean(formik.errors.message)}
+          helperText={formik.touched.message && formik.errors.message}
+          sx={{ mt: 2 }}
+        />
+        <Button
+          type="submit"
+          variant="contained"
+          fullWidth
+          color="primary"
+          sx={{
+            mt: 2,
+            py: 1.5,
+            fontSize: '1rem',
+          }}
+        >
+          Send Message
+        </Button>
+      </Box>
     </Container>
   );
 };
 
-export default AboutUs;
+export default ContactUs;
