@@ -16,18 +16,25 @@ const Home = () => {
 
       }}>
       {/* this is the main box  */}
-      <Box>
+      <Box
+        sx={{
+          mt:21,
+          hieght:'100%',
+          width:'100%',
+          border:'2px solid red'
+        }}
+      >
+
         {/* the box from where the news paper is being read  */}
         <Box
-
-          componont='img'
+          component={'img'}
           src={Front}
           sx={{
             height: '300vh',
             widht: '100%',
-            mt: '35vh',
-            border: '2px solid red'
-
+            ml: '78px',
+            mt: 2,
+            border: '1px solid black',
           }}
         />
 
@@ -35,50 +42,66 @@ const Home = () => {
         <Box
           sx={{
             height: '30vh',
-            widht: '100%',
-            mt: 2,
-            border: '2px solid red',
+            widht: '10vh',
+            mt: 1,
             display: 'flex',
-
-
+            justifyContent: 'space-around',
+            border:'2px solid black'
           }}
         >
 
           {/* The Sub image one */}
           <Box
+            component={'img'}
+            src={second}
             sx={{
               height: '30vh',
-              widht: '',
+              widht: '40vh',
               mt: 2,
-              border: '2px solid blue'
-
+              border: '1px solid black'
             }}
           />
+
           {/* The Sub image two  */}
           <Box
+            component={'img'}
+            src={third}
             sx={{
               height: '30vh',
-              widht: '30vh',
+              widht: '40vh',
               mt: 2,
-              border: '2px solid black'
+              border: '1px solid black'
 
             }}
           />
+
           {/* The Sub Image three  */}
           <Box
+            component={'img'}
+            src={four}
             sx={{
               height: '30vh',
-              widht: '30vh',
+              widht: '40vh',
               mt: 2,
-              border: '2px solid green'
+              border: '1px solid black'
 
             }}
           />
-         
+          {/* Fourth image  */}
+          <Box
+            component={'img'}
+            src={Front}
+            sx={{
+              height: '30vh',
+              widht: '40vh',
+              mt: 2,
+              border: '1px solid black'
+
+            }}
+          />
+
 
         </Box>
-
-
       </Box>
 
     </Container >
