@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Ap from 'Dry/src/App.css';
 import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx';
-import AboutUs from './components/AboutUs.jsx';
 import ContactUs from './components/ContactUs.jsx';
 import AlmondCards from './components/AlmondData.jsx';
 import Privacy from './components/Privacy.jsx';
@@ -37,7 +36,6 @@ function App() {
         <Route path="/1" element={<AlmondCards />} />
 
 
-        <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
