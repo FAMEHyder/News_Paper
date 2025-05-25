@@ -3,10 +3,33 @@ import { useState, useEffect } from 'react';
 import Front from '../Image/A.png';
 import second from '../Image/B.png';
 import third from '../Image/C.png';
-import four from '../Image/D.png';
+import fourth from '../Image/D.png';
+
+
 
 const Home = () => {
+  const [akharparo,setakhbarparo]=useState('');
 
+const imageobject = {
+
+  first:{
+    image:Front
+  },
+  second:{
+    image:second 
+  },
+  third:{
+    image:third 
+  },
+  fourth:{
+    image:fourth
+  }
+
+}
+
+const handleYeParo =(label)=>{
+setakhbarparo(label)
+}
 
   // 
   return (
