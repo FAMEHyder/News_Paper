@@ -46,8 +46,8 @@ const ContactUs = () => {
   });
 
   return (
-    <Container sx={{ p: { xs: 2, md: 4 },mt:25,mb:2, maxWidth: 'lg' }}>
-      
+    <Container sx={{ p: { xs: 2, md: 4 }, mt: 25, mb: 2, maxWidth: 'lg' }}>
+
       <Grid container justifyContent={'center'} spacing={3} sx={{ mb: 4 }}>
         <Grid item xs={12} sm={6} md={3}>
           <Box sx={{ textAlign: 'center' }}>

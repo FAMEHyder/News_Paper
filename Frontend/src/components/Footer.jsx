@@ -53,9 +53,6 @@ const Footer = () => {
           <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right', cursor: 'pointer', ':hover': { color: 'green' } }} onClick={() => handleclick('/terms')}>
             قوائد و ضوابط
           </Typography>
-          <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right', cursor: 'pointer', ':hover': { color: 'green' } }} onClick={() => handleclick('/about')}>
-            ہمارے بارے میں
-          </Typography>
           <Typography variant="body2" sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right', cursor: 'pointer', ':hover': { color: 'green' } }} onClick={() => handleclick('/contact')}>
             ہم سے رابطہ
           </Typography>
