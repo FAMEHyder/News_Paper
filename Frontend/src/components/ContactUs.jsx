@@ -68,7 +68,7 @@ const ContactUs = () => {
           <Box sx={{ textAlign: 'center' }}>
             <LocationOnIcon fontSize="large" color="primary" />
             <Typography variant="h6">Address</Typography>
-            <Typography variant="body2">SAT-TARA DIGITAL MARKETING SERVER</Typography>
+            <Typography variant="body2">Mashabrum times office near abc</Typography>
           </Box>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
