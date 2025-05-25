@@ -53,7 +53,10 @@ setakhbarparo(label)
             width:'210vh',
             border: '1px solid black',
             mt:2,
-            ml:2
+            ml:2,
+            '&:hover':{
+              
+            }
           }}
         />
 
