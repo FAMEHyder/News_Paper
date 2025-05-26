@@ -5,19 +5,24 @@ import {
   Box,
   Button,
   Link,
-  TextField,
+  Popover,
+  Typography,
   List,
   ListItemButton,
-  Popover,
-  Typography
+  TextField
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import DMT from '../Image/DMT.png';
-import { Facebook, Instagram, Twitter, WhatsApp, YouTube } from '@mui/icons-material';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { YouTube } from '@mui/icons-material';
 
 const Navbar = () => {
   const navigate = useNavigate();
 
+  // For Popover
   const [anchorEl, setAnchorEl] = useState(null);
   const [dates, setDates] = useState([]);
   const [filteredDates, setFilteredDates] = useState([]);
@@ -26,7 +31,7 @@ const Navbar = () => {
   useEffect(() => {
     const today = new Date();
     const dateArray = [];
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 60; i++) {
       const date = new Date();
       date.setDate(today.getDate() - i);
       dateArray.push(date.toISOString().split('T')[0]);
@@ -35,11 +40,6 @@ const Navbar = () => {
     setFilteredDates(dateArray);
   }, []);
 
-  const handleClick = (path) => {
-    navigate(path);
-  };
-
-  // The fix: use event.currentTarget here
   const handleDropdownOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -50,15 +50,15 @@ const Navbar = () => {
     setFilteredDates(dates);
   };
 
-  const handleDateClick = (date) => {
-    navigate('/store', { state: { selectedDate: date } });
-    handleDropdownClose();
-  };
-
   const handleSearchChange = (e) => {
     const val = e.target.value;
     setSearch(val);
     setFilteredDates(dates.filter((d) => d.includes(val)));
+  };
+
+  const handleDateClick = (date) => {
+    navigate('/store', { state: { selectedDate: date } });
+    handleDropdownClose();
   };
 
   const open = Boolean(anchorEl);
@@ -66,27 +66,30 @@ const Navbar = () => {
 
   return (
     <AppBar sx={{ backgroundColor: 'white', height: '30vh' }}>
-      <Toolbar sx={{ flexDirection: 'column', height: '30vh', width: '100%' }}>
+      <Toolbar sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', height: '30vh', width: '100%' }}>
         <Box
-          onClick={() => handleClick('/')}
-          component="img"
+          onClick={() => navigate('/')}
+          component={'img'}
           src={DMT}
           sx={{
             cursor: 'pointer',
             height: '23vh',
             width: '100%',
             borderBottom: '4px solid black',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
           }}
         />
+
         <Box sx={{ height: '10vh', width: '100%', bgcolor: 'black', display: 'flex' }}>
           <Box flexGrow={1}>
-            <Button sx={{ color: 'white', mr: 3, '&:hover': { bgcolor: 'red' } }}>صفحہ اول</Button>
-            <Button sx={{ color: 'white', mr: 3, borderInlineStart: '2px solid silver', '&:hover': { bgcolor: 'red' } }}>
-              صفحات
+            <Button color="inherit" sx={{ mr: 3, color: 'white', '&:hover': { bgcolor: 'red' } }}>
+              صفحہ اول
             </Button>
             <Button
-              sx={{ color: 'white', mr: 3, borderInlineStart: '2px solid silver', '&:hover': { bgcolor: 'red' } }}
               onClick={handleDropdownOpen}
+              color="inherit"
+              sx={{ mr: 3, borderInlineStart: '2px solid silver', color: 'white', '&:hover': { bgcolor: 'red' } }}
             >
               گزشتہ شمارے
             </Button>
@@ -95,16 +98,27 @@ const Navbar = () => {
               open={open}
               anchorEl={anchorEl}
               onClose={handleDropdownClose}
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-              PaperProps={{ sx: { width: '300px', maxHeight: '400px', p: 2, overflowY: 'auto' } }}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              PaperProps={{
+                sx: {
+                  width: 300,
+                  maxHeight: 400,
+                  p: 2,
+                  overflowY: 'auto',
+                  mt: 1,
+                },
+              }}
             >
               <Typography variant="h6" sx={{ mb: 1 }}>
                 📅 آج کی تاریخ: {new Date().toISOString().split('T')[0]}
               </Typography>
               <TextField
                 fullWidth
-                variant="outlined"
                 placeholder="تاریخ تلاش کریں..."
+                variant="outlined"
                 value={search}
                 onChange={handleSearchChange}
                 sx={{ mb: 2 }}
@@ -118,21 +132,23 @@ const Navbar = () => {
               </List>
             </Popover>
           </Box>
+
+          {/* Socials */}
           <Box>
             <Link href="https://www.youtube.com" target="_blank" color="inherit">
               <YouTube sx={{ fontSize: 30, '&:hover': { color: 'red' } }} />
             </Link>
             <Link href="https://www.whatsapp.com" target="_blank" color="inherit">
-              <WhatsApp sx={{ fontSize: 30, '&:hover': { color: 'green' } }} />
+              <WhatsAppIcon sx={{ fontSize: 30, '&:hover': { color: 'green' } }} />
             </Link>
             <Link href="https://www.twitter.com" target="_blank" color="inherit">
-              <Twitter sx={{ fontSize: 30, '&:hover': { color: '#1da1f2' } }} />
+              <TwitterIcon sx={{ fontSize: 30, '&:hover': { color: '#1da1f2' } }} />
             </Link>
             <Link href="https://www.instagram.com" target="_blank" color="inherit">
-              <Instagram sx={{ fontSize: 30, '&:hover': { color: '#e1306c' } }} />
+              <InstagramIcon sx={{ fontSize: 30, '&:hover': { color: '#e1306c' } }} />
             </Link>
             <Link href="https://www.facebook.com" target="_blank" color="inherit">
-              <Facebook sx={{ fontSize: 30, '&:hover': { color: 'blue' } }} />
+              <FacebookIcon sx={{ fontSize: 30, '&:hover': { color: 'blue' } }} />
             </Link>
           </Box>
         </Box>

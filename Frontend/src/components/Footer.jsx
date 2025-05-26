@@ -90,11 +90,7 @@ const Footer = () => {
           </Box>
 
         </Grid>
-        <Grid item xs={12} sm={2}>
-          <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Noto Nastaliq Urdu', textAlign: 'right' }}>
-            اہم صفحات
-          </Typography>
-        </Grid>
+       
       </Grid>
 
       <Box sx={{ textAlign: 'center', marginTop: '20px' }}>
